@@ -1,0 +1,139 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 01-Abr-2023 às 23:51
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `modbasedados2per`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cds`
+--
+
+CREATE TABLE `cds` (
+  `CD_CODIGO` int(10) UNSIGNED NOT NULL,
+  `CD_NOME` varchar(50) NOT NULL,
+  `CD_DATA_COMPRA` date DEFAULT NULL,
+  `CD_VALOR_PAGO` double DEFAULT NULL,
+  `CD_LOCAL_COMPRA` varchar(45) DEFAULT NULL,
+  `CD_ALBUM` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `cds`
+--
+
+INSERT INTO `cds` (`CD_CODIGO`, `CD_NOME`, `CD_DATA_COMPRA`, `CD_VALOR_PAGO`, `CD_LOCAL_COMPRA`, `CD_ALBUM`) VALUES
+(1, 'ACÚSTIVO MTV: KID ABELHA', '2003-06-03', 49.9, 'BELO HORIZONTE', 0),
+(2, 'UNS DIAS AO VIVO', '2023-04-12', 29.9, 'ITABIRA', 0),
+(3, 'VÔ IMBOLÁ', '2016-10-14', 19.9, 'FORMOSA', 0),
+(4, 'AO VIVO: EMMERSON NOGUEIRA', '2012-12-28', 14.9, 'BURITIS', 0),
+(5, 'O SENHOR DOS ANÉIS', '2018-08-18', 49.9, 'UBERABA', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `musicas`
+--
+
+CREATE TABLE `musicas` (
+  `MUS_NUMERO` int(10) UNSIGNED NOT NULL,
+  `MUS_CD_CODIGO` int(10) UNSIGNED NOT NULL,
+  `MUS_NOME` varchar(50) NOT NULL,
+  `MUS_ARTISTA` varchar(50) NOT NULL,
+  `MUS_TEMPO` time DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `musicas`
+--
+
+INSERT INTO `musicas` (`MUS_NUMERO`, `MUS_CD_CODIGO`, `MUS_NOME`, `MUS_ARTISTA`, `MUS_TEMPO`) VALUES
+(1, 1, 'EU SÓ PENSO EM VOCÊ', 'KID ABELHA', '00:03:17'),
+(2, 1, 'LÁGRIMAS DE CHUVA', 'KID ABELHA', '00:04:15'),
+(3, 1, 'OS OUTROS', 'KID ABELHA', '00:02:02'),
+(4, 1, 'MEU VÍCIO AGORA', 'KID ABELHA', '00:03:14'),
+(5, 2, 'ALAGADOS', 'PARALAMAS DO SUCESSO', '00:05:44'),
+(6, 2, 'LOURINHA BOMBRIL', 'PARALAMAS DO SUCESSO', '00:03:08'),
+(7, 2, 'O CALIBRE', 'PARALAMAS DO SUCESSO', '00:04:41'),
+(8, 2, 'CUIDE BEM DO SEU AMOR', 'PARALAMAS DO SUCESSO', '00:03:45'),
+(9, 2, 'MEU ERRO', 'PARALAMAS DO SUCESSO', '00:03:22'),
+(10, 3, 'LENHA', 'ZECA BALEIRO', '00:04:10'),
+(11, 3, 'DISRITMIA', 'ZECA BALEIRO', '00:04:23'),
+(12, 3, 'VÔ IMBOLÁ', 'ZECA BALEIRO', '00:04:10'),
+(13, 3, 'PAGODE RUSSO', 'ZECA BALEIRO', '00:04:08'),
+(14, 3, 'PIERCING', 'ZECA BALEIRO', '00:05:30'),
+(15, 3, 'MEU AMOR, MEU BEM, ME AME', 'ZECA BALEIRO', '00:03:49'),
+(16, 4, 'BLOWIN`IN THE WIND', 'EMMERSON NOGUEIRA', '00:03:39'),
+(17, 4, 'MONEY', 'EMMERSON NOGUEIRA', '00:03:07'),
+(18, 4, 'EVERY BREATH YOU TAKE', 'EMMERSON NOGUEIRA', '00:05:12'),
+(19, 4, 'GIVE A LITTLE BIT', 'EMMERSON NOGUEIRA', '00:03:07'),
+(20, 4, 'THE LOGICAL SONG', 'EMMERSON NOGUEIRA', '00:03:18'),
+(21, 5, 'A SOCIEDADE DO ANEL', 'J.R.R.TOLKIEN', NULL),
+(22, 5, 'AS DUAS TORRES', 'J.R.R.TOLKIEN', NULL),
+(23, 5, 'O RETORNO DO REI', 'J.R.R.TOLKIEN', NULL);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `cds`
+--
+ALTER TABLE `cds`
+  ADD PRIMARY KEY (`CD_CODIGO`);
+
+--
+-- Índices para tabela `musicas`
+--
+ALTER TABLE `musicas`
+  ADD PRIMARY KEY (`MUS_NUMERO`,`MUS_CD_CODIGO`),
+  ADD KEY `MUSICAS_FKIndex1` (`MUS_CD_CODIGO`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `cds`
+--
+ALTER TABLE `cds`
+  MODIFY `CD_CODIGO` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `musicas`
+--
+ALTER TABLE `musicas`
+  MODIFY `MUS_NUMERO` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `musicas`
+--
+ALTER TABLE `musicas`
+  ADD CONSTRAINT `musicas_ibfk_1` FOREIGN KEY (`MUS_CD_CODIGO`) REFERENCES `cds` (`CD_CODIGO`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
