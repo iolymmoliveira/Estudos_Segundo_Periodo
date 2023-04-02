@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Animado</title>
+  <style>
+    *{
+      margin: 0;
+    }
+    h1, h2, h3, h4, h5 {
+      border-radius: 20px;
+      padding: 5px;
+      text-align: center;      
+      color: whitesmoke;
+      padding-left: 25px;
+      padding-right: 25px;
+      margin: 8px;
+    }
+    h1 {
+      background-color: rgb(3, 3, 56);
+    }
+    h2 {
+      background-color: rgb(10, 10, 107);
+    }
+    h3 {
+      background-color: rgb(12, 12, 146);
+    }
+    h4 {
+      background-color: rgb(19, 19, 204);
+    }
+    h5 {
+      background-color: rgb(97, 97, 248);
+      /* color: rgb(3, 3, 56); */
+    }
+    h1:hover, h2:hover, h3:hover, h4:hover, h5:hover {
+      background: black;
+      color: white;
+      transition: width 2s, height 2s, background-color 2s, transform 2s;
+      cursor: pointer;
+    }
+    div#container {
+      width: 450px;
+      height: 250px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: radial-gradient(circle at 50% -20.71%, #ff57d2 0, #ff4edb 12.5%, #f046e3 25%, #d63feb 37.5%, #b53cf2 50%, #8c3df9 62.5%, #4f40ff 75%, #0046ff 87.5%, #004bff 100%);
+      position: relative;
+      top: 0;
+      left: calc(50% - 225px); /* Para centralizar a posição inicial subtraí metade de seu width de 50% do tamanho da tela */
+    }
+    .animationPosition {
+      position: absolute;
+      animation: positions 12s linear; /* infinite - para a animação não parar após o tempo passado*/
+    }
+    @keyframes positions {
+      /* Posição 1 - No centro e Topo */
+      0% {
+        top: 0;
+        left: calc(50% - 225px);
+      }
+      /* Posição 2 - Alinhado embaixo e centralizado */
+      20% {
+        top: calc(100vh - 250px);
+        left: calc(50% - 225px);
+      }
+      /* Posição 3 - Alinhado embaixo e à Direita */
+      40% {
+        top: calc(100vh - 250px);
+        left: calc(100% - 450px);
+      }
+      /* Posição 4 - Alinhado embaixo e à Esquerda */
+      60% {
+        top: calc(100vh - 250px);
+        left: 0;
+      }
+      /* Posição 5 - Alinhado embaixo e centralizado */
+      80% {
+        top: calc(100vh - 250px);
+        left: calc(50% - 225px);
+      }
+      /* Posição 6 - No centro e Topo - Retorna a Posição 1 */
+      100% {
+        top: 0;
+        left: calc(50% - 225px);
+      } 
+    } 
+  </style>
+</head>
+<body>
+  <div id="container" class="animationPosition">
+    <h1>Este é meu sexto HTML</h1>
+    <h2>Este é meu sexto HTML</h2>
+    <h3>Este é meu sexto HTML</h3>
+    <h4>Este é meu sexto HTML</h4>
+    <h5>Este é meu sexto HTML</h5>
+  </div>
+
+  <script>
+  </script>
+</body>
+</html>

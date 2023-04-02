@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movimentar com JS</title>
+  <style>
+    body {
+      background-color: rgb(250, 204, 218);
+    }
+    div#player {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(255, 0, 0, 0.673);
+        border: 2px solid rgb(0, 0, 0);
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="player"></div>
+
+<script>
+
+var horizontalAxisX = 0;
+var verticalAxisY = 0;
+var pixels = "px";
+
+window.addEventListener("keydown", playerMovement);
+
+function playerMovement() {
+    var player = window.document.getElementById("player");
+    var key = event.keyCode;
+    
+    if (key == 37) {
+        horizontalAxisX += -10;
+        player.style.left = horizontalAxisX + pixels;
+    }
+
+    else if (key == 38) {
+        verticalAxisY += -10;
+        player.style.top = verticalAxisY + pixels;
+    }
+
+    else if (key == 39) {
+        horizontalAxisX += 10;
+        player.style.left = horizontalAxisX + pixels;
+    }
+
+    else if (key == 40) {
+        verticalAxisY += 10;
+        player.style.top = verticalAxisY + pixels;
+    }
+
+    else if (key == 32) {
+        player.style.top = "0";
+        player.style.left = "0";
+        horizontalAxisX = 0;
+        verticalAxisY = 0;
+    }
+}
+
+</script>
+
+</body>
+</html>

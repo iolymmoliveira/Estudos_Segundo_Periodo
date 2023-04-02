@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Move com teclado</title>
+  <style>
+    body {
+      background-color: rgb(250, 204, 218);
+    }
+    div#container {
+      width: 200px;
+      height: 200px;
+      background-color: #0046ff;
+      border: 2px solid black;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script>
+    var horizontal = 0;
+    var vertical = 0;
+    var pixels = "px";
+
+    window.addEventListener("keydown", mover);
+
+    function mover() {
+      var move = window.document.getElementById("container");
+      var tecla = event.keyCode;
+      
+      //Tecla seta esquerda
+      if(tecla == 37) {
+        horizontal += -50;
+        move.style.left = horizontal + pixels;
+      } 
+      //Tecla seta cima
+      else if(tecla == 38) {
+        vertical += -50;
+        move.style.top = vertical + pixels;
+      } 
+      //Tecla seta direita
+      else if(tecla == 39) {
+        horizontal += 50;
+        move.style.left = horizontal + pixels;
+      } 
+      //Tecla seta baixo
+      else if(tecla == 40) {
+        vertical += 50;
+        move.style.top = vertical + pixels;
+      } 
+      //Tecla seta espaço ou outras
+      else if(tecla == 32) {
+        move.style.top = "0";
+        move.style.left = "0";
+        horizontal = 0;
+        vertical = 0;
+      }
+    }
+  </script>
+</body>
+</html>
