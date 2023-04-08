@@ -1,18 +1,18 @@
 Algoritmo "imc"
-// Disciplina   : [Linguagem e Lógica de Programação]
+// Disciplina   : [Linguagem e LÃ³gica de ProgramaÃ§Ã£o]
 // Professor   : Alexandre Dequech
-// Descrição   : Calcula imc para 20 pessoas
+// DescriÃ§Ã£o   : Calcula imc para 20 pessoas
 // Autor(a)    : Ioly M M Oliveira
 // Data atual  : 05/04/2023
 Var
-// Seção de Declarações das variáveis
+// SeÃ§Ã£o de DeclaraÃ§Ãµes das variÃ¡veis
 
    cont: inteiro
    peso, altura, imc: real
 
 
 Inicio
-// Seção de Comandos, procedimento, funções, operadores, etc...
+// SeÃ§Ã£o de Comandos, procedimento, funÃ§Ãµes, operadores, etc...
 
    PARA cont DE 1 ATE 20 FACA
 
@@ -24,11 +24,37 @@ Inicio
 
 		  imc <- peso / (altura * altura)
 
+        escreval ()
         escreval ("O aluno", cont, " possui IMC = ", imc:3:2)
+        escreval ()
+        
+        SE (imc >= 40) ENTAO
+            escreval ("Obesidade III - mÃ³rbida")
+        SENAO
+         	SE (imc >= 35) ENTAO
+               escreval ("Obesidade II - severa")
+            SENAO
+         	     SE (imc >= 30) ENTAO
+         	        escreval ("Obesidade I")
+      	        SENAO
+         		       SE (imc >= 25) ENTAO
+         		          escreval ("Acima do Peso")
+      		          SENAO
+         			         SE (imc >= 18.5) ENTAO
+         			            escreval ("Peso Normal")
+      			            SENAO
+         				           SE (imc >= 17) ENTAO
+         				              escreval ("Abaixo do Peso")
+      				              SENAO
+         					             escreval ("Muito abaixo do Peso")
+      				              FIMSE
+    			               FIMSE
+    		            FIMSE
+     	          FIMSE
+       	  FIMSE
+        FIMSE
+        escreval ("-----------------")
+        escreval ("")
+   FIMPARA
 
-  FIMPARA
-
-
-
-
-Fimalgoritmo
+FimAlgoritmo
