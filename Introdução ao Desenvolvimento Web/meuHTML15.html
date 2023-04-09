@@ -14,7 +14,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         div h1 {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             background-color: #D1CBCB;
             text-align: center;
             padding: 8px 0;
@@ -32,21 +32,64 @@
         .row_form label, 
         .row_form input {
             display: block;
-            width: 380px;
+            width: 260px;
         }
-        .row_form label {
+        .row_form label,
+        .multi label {
             margin-bottom: 5px;
+            font-size: 0.825rem;
+            font-weight: 600;
         }
         .row_form input {
             margin-bottom: 10px;
-        }
-        .row_button input{
-            width: 160px;
-            font-weight: bold;
-            padding: 2px;
+            font-size: 0.6rem;
+            padding: 2px 0;
         }
         .multi {
             margin-bottom: 10px;
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+        }
+        .multi_column:first-child {  
+           display: flex;
+           width: 28%;
+        }
+        .multi_column:nth-child(2) {  
+           display: flex;
+           width: 45%;
+        }
+        .multi_column:last-child {  
+           display: flex;
+           width: 32%;
+        }
+        .multi_column:first-child label {
+            width: 45%;
+        }
+        .multi_column:nth-child(2) label {
+            width: 29%;
+        }
+        .multi_column:last-child  label {
+            width: 45%;
+        }
+        .multi_column input{
+            width: 40%;
+            margin-right: 5px;  
+        }
+        .multi_column select {
+            width: 60%;
+            margin-right: 5px;
+            font-size: 0.6rem;   
+        }
+        .row_button {
+            width: 160px;
+            margin: 15px auto 0 auto;
+        }
+        .row_button input{
+            font-weight: bold;
+            padding: 2px;
+            border: 2px solid black;
+            border-radius: 6px;
         }
     </style>
 </head>
@@ -64,18 +107,30 @@
             <input type="text" placeholder="Entre com seu sobrenome">
         </div>
         <div class="multi">
-            <label>Idade</label>
-            <input type="text">
-    
-            <label>Cargo</label>
-            <select name="" id="">
-                <option value="">Secretário</option>
-            </select>
-        
-            <label>Setor</label>
-            <select name="" id="">
-                <option value="">RH</option>
-            </select>   
+            <div class="multi_column">
+                <label>Idade</label>
+                <input type="text">
+            </div>
+            <div class="multi_column">
+                <label>Cargo</label>
+                <select name="" id="">
+                    <option value="">Secretário</option>
+                    <option value="">Secretário</option>
+                    <option value="">Secretário</option>
+                    <option value="">Secretário</option>
+                    <option value="">Secretário</option>
+                </select>
+            </div>
+            <div class="multi_column">
+                <label>Setor</label>
+                <select name="" id="">
+                    <option value="">RH</option>
+                    <option value="">Administrativo</option>
+                    <option value="">Contabilidade</option>
+                    <option value="">Coordenadoria</option>
+                    <option value="">Gerência</option>
+                </select>
+            </div>  
         </div>
         <div class="row_form">
             <label for="">Data da visita</label>
@@ -83,7 +138,7 @@
         </div>
         <div class="row_form">
             <label for="">Observações</label>
-            <textarea name="" id="" cols="50" rows="4"></textarea>
+            <textarea name="" id="" cols="33" rows="3"></textarea>
         </div>
         <div class="row_button">
             <input type="button" value="Submeter o formulário">
