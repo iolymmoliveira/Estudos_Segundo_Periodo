@@ -1,27 +1,27 @@
 Algoritmo "exec_03_var_acumuladora"
-// Disciplina   : [Linguagem e LÛgica de ProgramaÁ„o]
+// Disciplina   : [Linguagem e L√≥gica de Programa√ß√£o]
 // Professor   : Alexandre Dequech
-// DescriÁ„o   : Ler e calcular sal·rios de 100 funcion·rios
+// Descri√ß√£o   : Ler e calcular sal√°rios de 100 funcion√°rios
 // Autor(a)    : Ioly M M Oliveira
 // Data atual  : 08/04/2023
 Var
-   // SeÁ„o de DeclaraÁıes das vari·veis
+   // Se√ß√£o de Declara√ß√µes das vari√°veis
 
    contFunc, contSal: inteiro
    salario, salarioAnual, folhaAnual: inteiro
 
 
 Inicio
-   // SeÁ„o de Comandos, procedimento, funÁıes, operadores, etc...
+   // Se√ß√£o de Comandos, procedimento, fun√ß√µes, operadores, etc...
 
    PARA contFunc DE 1 ATE 2 FACA
-
-      escreval ("Informe os 13 sal·rios do ", contFunc, "∫ Funcion·rio:")
+      salarioAnual <- 0
+      escreval ("Informe os 13 sal√°rios do ", contFunc, "¬∫ Funcion√°rio:")
       escreval ()
 
       PARA contSal DE 1 ATE 13 FACA
 
-         escreval ("Informe o ", contSal, "∫ sal·rio:")
+         escreval ("Informe o ", contSal, "¬∫ sal√°rio:")
          leia (salario)
 
          salarioAnual <- salarioAnual + salario
@@ -29,7 +29,7 @@ Inicio
       FIMPARA
 
       escreval()
-      escreval ("O sal·rio anual do funcion·rio", contFunc," È de R$", salarioAnual, " reais.")
+      escreval ("O sal√°rio anual do funcion√°rio", contFunc," √© de R$", salarioAnual, " reais.")
       escreval ("-------------------------------------")
       escreval()
       
@@ -38,7 +38,7 @@ Inicio
    FIMPARA
    escreval (">>>>>>>>>>>>>><<<<<<<<<<<<<")
    escreval()
-   escreval ("A folha anual È de R$", folhaAnual, " reais.")
+   escreval ("A folha anual √© de R$", folhaAnual, " reais.")
    escreval()
 
 FimAlgoritmo
