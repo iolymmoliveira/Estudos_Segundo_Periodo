@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        div h2 {
+            font-size: 1rem;
+            text-align: center;
+        }
+        .container_form {
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .row_form input[type="text"] {
+            display: block;
+            width: 93%;
+            background-color: #E5EBDD;
+            padding: 8px;
+            border: none;
+            border-radius: 18px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container_form">
+        <div>
+            <h2>Formulário</h2>
+        </div>
+        <div class="row_form">
+            <label>Nome</label>
+            <input type="text" placeholder="entre com o nome">
+        </div>
+        <div class="row_form">
+            <label>Sobrenome</label>
+            <input type="text" placeholder="entre com o sobrenome">
+        </div>
+        <div class="row_form">
+            <label>Profissão</label>
+            <div class="row_form">
+                <input type="radio" name="option">
+                <label>médico</label>
+            </div>
+            <div class="row_form">
+                <input type="radio" name="option">
+                <label>advogado</label>
+            </div>
+            <div class="row_form">
+                <input type="radio" name="option">
+                <label>Engenheiro</label>
+            </div>
+            <div class="row_form">
+                <input type="radio" name="option">
+                <label>Programador</label>
+            </div>
+        </div> 
+        <div class="row_button">
+            <input type="button" value="enviar dado">
+        </div>
+    </div>
+</body>
+</html>
